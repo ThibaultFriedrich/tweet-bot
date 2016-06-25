@@ -3,12 +3,21 @@ var express = require('express');
 var morgan = require('morgan');
 var swig = require('swig');
 var colors = require('colors');
+// https://github.com/indexzero/nconf
+var nconf = require('nconf');
+
 
 var users = JSON.parse(fs.readFileSync(__dirname+'/../users.json'));
 var twitter = require('../twitter-conf');
 var bot = require('./bot')({
     users: users,
-    twitter: twitter
+    twitter: {
+        "consumer_key": 
+        "consumer_secret": "qKapBxmR9pmt0G4ufYqvUn4YmUySyyMh3vZN6Mx2lhcDjFzDyt",
+        "access_token_key": "873127088-Ra6KlKdunlV6xg7FiiPtg5m5bxA52TmlQZeHJ04c",
+        "access_token_secret": "zcmn579wNASf810fPxvwB2BJ86t5Mz52lLz66pIsptSRm"
+
+    }
 });
 
 var history = {tweets:[], retweets:[]};

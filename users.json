@@ -1,0 +1,18 @@
+{
+    "R_Thibault_Oliw": {
+        "id": 873127088,
+        "rt": {
+            "proba": 1,
+            "minDelay": 1,
+            "maxDelay": 5
+        }
+    },
+    "CVSTENE": {
+        "id": 3954200050,
+        "rt": {
+            "proba": 1,
+            "minDelay": 1,
+            "maxDelay": 5
+        }
+    }
+}
