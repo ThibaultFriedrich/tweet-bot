@@ -67,7 +67,9 @@ app
 })
 .use(express.static(__dirname+'/../views/static'));
 
-var server = app.listen(8080, function (req, res) {
+var port = process.env.PORT || 8080;
+
+var server = app.listen(port, function (req, res) {
     console.log('listening on http://localhost:'+server.address().port);
 });
 
