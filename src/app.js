@@ -9,7 +9,7 @@ var nconf = require('nconf');
 nconf
 .argv()
 .env()
-.file({file: __dirname+'/../twitter-conf'});
+.file({file: __dirname+'/../twitter-conf.json'});
 
 
 var users = JSON.parse(fs.readFileSync(__dirname+'/../users.json'));
@@ -69,4 +69,8 @@ app
 
 var server = app.listen(8080, function (req, res) {
     console.log('listening on http://localhost:'+server.address().port);
+});
+
+server.on('error', function (err) {
+    console.log(err);
 });

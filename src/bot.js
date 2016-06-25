@@ -66,6 +66,7 @@ function Bot(opts) {
         }
 
         if (opts.hasOwnProperty('twitter')) {
+            //console.log(opts.twitter);
             twitter = new Twitter(opts.twitter);
 
             var follow = '';
