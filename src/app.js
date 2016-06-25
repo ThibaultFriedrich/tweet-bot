@@ -13,7 +13,6 @@ nconf
 
 
 var users = JSON.parse(fs.readFileSync(__dirname+'/../users.json'));
-var twitter = require('../twitter-conf');
 var bot = require('./bot')({
     users: users,
     twitter: {
