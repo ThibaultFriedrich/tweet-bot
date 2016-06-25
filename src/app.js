@@ -6,17 +6,21 @@ var colors = require('colors');
 // https://github.com/indexzero/nconf
 var nconf = require('nconf');
 
+nconf
+.argv()
+.env()
+.file({file: __dirname+'/../twitter-conf'});
+
 
 var users = JSON.parse(fs.readFileSync(__dirname+'/../users.json'));
 var twitter = require('../twitter-conf');
 var bot = require('./bot')({
     users: users,
     twitter: {
-        "consumer_key": 
-        "consumer_secret": "qKapBxmR9pmt0G4ufYqvUn4YmUySyyMh3vZN6Mx2lhcDjFzDyt",
-        "access_token_key": "873127088-Ra6KlKdunlV6xg7FiiPtg5m5bxA52TmlQZeHJ04c",
-        "access_token_secret": "zcmn579wNASf810fPxvwB2BJ86t5Mz52lLz66pIsptSRm"
-
+        "consumer_key": nconf.get('consumer_key'),
+        "consumer_secret": nconf.get('consumer_secret'),
+        "access_token_key": nconf.get('access_token_key'),
+        "access_token_secret": nconf.get('access_token_secret')
     }
 });
 
